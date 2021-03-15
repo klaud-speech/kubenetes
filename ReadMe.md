@@ -42,7 +42,7 @@ minikube start
 [root@localhost /]# kubectl get po -A
 The connection to the server localhost:8080 was refused - did you specify the right host or port?
 ```
-상기 오류가 있을 경우, 방화벽 점검.
+
 
 
 
