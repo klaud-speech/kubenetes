@@ -112,7 +112,19 @@ http://211.236.230.232:38012/api/v1/namespaces/kubernetes-dashboard/services/htt
 ```
 kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.4
 kubectl expose deployment hello-minikube --type=NodePort --port=8080
+minikube service hello-minikube
 ```
+<details><summary> 결과화면 </summary>
+|-----------|----------------|-------------|-----------------------|
+| NAMESPACE |      NAME      | TARGET PORT |          URL          |
+|-----------|----------------|-------------|-----------------------|
+| default   | hello-minikube |        8080 | http://10.0.0.2:30768 |
+|-----------|----------------|-------------|-----------------------|
+* Opening service default/hello-minikube in default browser...
+  - http://10.0.0.2:30768
+ ==> CloudIT에서는  외부 IP 즉 http://211.236.230.232:30768
+</details>
+
 ```
 kubectl get svc
 ```
