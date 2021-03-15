@@ -110,6 +110,22 @@ http://211.236.230.232:38012/api/v1/namespaces/kubernetes-dashboard/services/htt
     
 </summary>
 
+#### Deploy Applications
+```
+kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.4
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+```
+```
+kubectl get svc
+```
+
+#### Delete a local cluster
+```
+minikube stop
+minikube delete
+```
+
+
 ## Uninstall
 ```
 minikube stop; minikube delete
