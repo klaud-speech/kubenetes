@@ -84,7 +84,7 @@ minikube start --driver=none
 
 
 
-
+shiny new cluster
 ```
 kubectl get po -A
 ```
