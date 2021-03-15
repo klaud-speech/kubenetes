@@ -12,6 +12,16 @@ rpm -ivh minikube-latest.x86_64.rpm
 PATH=$PATH:/usr/bin
 echo $PATH
 ```
+#### docker 설치
+```
+yum install docker
+systemctl enable docker
+systemctl start docker
+```
+
+```
+minikube start
+```
 
 
 
