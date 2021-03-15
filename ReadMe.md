@@ -86,9 +86,18 @@ minikube start --driver=none
 
 
 ```
-[root@localhost /]# kubectl get po -A
+kubectl get po -A
 ```
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
+<details><summary> 결과화면 </summary>
+NAMESPACE     NAME                                READY   STATUS    RESTARTS   AGE             <br>
+kube-system   coredns-74ff55c5b-xst4m             1/1     Running   0          8m20s           <br>  
+kube-system   etcd-localhost                      1/1     Running   0          8m30s           <br>
+kube-system   kube-apiserver-localhost            1/1     Running   0          8m30s           <br>
+kube-system   kube-controller-manager-localhost   1/1     Running   0          8m30s           <br>
+kube-system   kube-proxy-fwmtn                    1/1     Running   0          8m20s           <br>
+kube-system   kube-scheduler-localhost            1/1     Running   0          8m30s           <br>
+kube-system   storage-provisioner                 1/1     Running   0          8m36s           <br>
+</details>
 
 
 
