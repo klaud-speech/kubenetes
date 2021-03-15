@@ -39,12 +39,18 @@ yum install -y kubectl
 ```
 minikube start
 ```
+X Exiting due to DRV_AS_ROOT: The "docker" driver should not be used with root privileges.
+
+```
+minikube start --driver=none
+```
+X Exiting due to GUEST_MISSING_CONNTRACK: Sorry, Kubernetes 1.20.2 requires conntrack to be installed in root's path
+
 
 ```
 [root@localhost /]# kubectl get po -A
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
 ```
-
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
 
 
 
