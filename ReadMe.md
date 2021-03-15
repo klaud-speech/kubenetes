@@ -8,6 +8,14 @@ curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest
 rpm -ivh minikube-latest.x86_64.rpm
 ```
 
+```
+PATH=$PATH:/usr/bin
+echo $PATH
+```
+
+
+
+
 
 ## Uninstall
 ```
