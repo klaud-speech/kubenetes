@@ -125,7 +125,11 @@ minikube service hello-minikube
  ==> CloudIT에서는  외부 IP 즉 http://211.236.230.232:30768            <br>
 </details>
 
+#### 각종 조회
 ```
+kubectl cluster-info
+kubectl get nodes
+kubectl get pods
 kubectl get svc
 ```
 
