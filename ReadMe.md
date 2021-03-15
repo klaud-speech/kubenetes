@@ -115,14 +115,14 @@ kubectl expose deployment hello-minikube --type=NodePort --port=8080
 minikube service hello-minikube
 ```
 <details><summary> 결과화면 </summary>
-|-----------|----------------|-------------|-----------------------|
-| NAMESPACE |      NAME      | TARGET PORT |          URL          |
-|-----------|----------------|-------------|-----------------------|
-| default   | hello-minikube |        8080 | http://10.0.0.2:30768 |
-|-----------|----------------|-------------|-----------------------|
-* Opening service default/hello-minikube in default browser...
-  - http://10.0.0.2:30768
- ==> CloudIT에서는  외부 IP 즉 http://211.236.230.232:30768
+|-----------|----------------|-------------|-----------------------|  <br>
+| NAMESPACE |      NAME      | TARGET PORT |          URL          |  <br>
+|-----------|----------------|-------------|-----------------------|  <br>
+| default   | hello-minikube |        8080 | http://10.0.0.2:30768 |  <br>
+|-----------|----------------|-------------|-----------------------|  <br>
+* Opening service default/hello-minikube in default browser...        <br>
+  - http://10.0.0.2:30768                                             <br>
+ ==> CloudIT에서는  외부 IP 즉 http://211.236.230.232:30768            <br>
 </details>
 
 ```
