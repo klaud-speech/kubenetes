@@ -54,6 +54,7 @@ yum install conntrack
 minikube start --driver=none
 ```
 <details><summary>결과화면</summary>
+```
 * minikube v1.18.1 on Centos 7.3.1611 (kvm/amd64)  
 * Using the none driver based on user configuration  
 * Starting control plane node minikube in cluster minikube  
@@ -80,6 +81,7 @@ minikube start --driver=none
   - Using image gcr.io/k8s-minikube/storage-provisioner:v4  
 * Enabled addons: default-storageclass, storage-provisioner  
 * Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default  
+```
 </details>
 
 
