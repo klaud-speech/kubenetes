@@ -46,6 +46,17 @@ minikube start --driver=none
 ```
 X Exiting due to GUEST_MISSING_CONNTRACK: Sorry, Kubernetes 1.20.2 requires conntrack to be installed in root's path
 
+```
+yum install conntrack
+```
+
+```
+minikube start --driver=none
+```
+
+
+
+
 
 ```
 [root@localhost /]# kubectl get po -A
