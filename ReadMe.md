@@ -53,7 +53,34 @@ yum install conntrack
 ```
 minikube start --driver=none
 ```
-
+<details><summary>결과화면</summary>
+* minikube v1.18.1 on Centos 7.3.1611 (kvm/amd64)
+* Using the none driver based on user configuration
+* Starting control plane node minikube in cluster minikube
+* Running on localhost (CPUs=4, Memory=3790MB, Disk=102388MB) ...
+* OS release is CentOS Linux 7 (Core)
+    > kubelet: 108.73 MiB / 108.73 MiB [-------------] 100.00% 7.17 MiB p/s 16s
+  - Generating certificates and keys ...
+  - Booting up control plane ...
+  - Configuring RBAC rules ...
+* Configuring local host environment ...
+*
+! The 'none' driver is designed for experts who need to integrate with an existing VM
+* Most users should use the newer 'docker' driver instead, which does not require root!
+* For more information, see: https://minikube.sigs.k8s.io/docs/reference/drivers/none/
+*
+! kubectl and minikube configuration will be stored in /root
+! To use kubectl or minikube commands as your own user, you may need to relocate them. For example, to overwrite your own settings, run:
+*
+  - sudo mv /root/.kube /root/.minikube $HOME
+  - sudo chown -R $USER $HOME/.kube $HOME/.minikube
+*
+* This can also be done automatically by setting the env var CHANGE_MINIKUBE_NONE_USER=true
+* Verifying Kubernetes components...
+  - Using image gcr.io/k8s-minikube/storage-provisioner:v4
+* Enabled addons: default-storageclass, storage-provisioner
+* Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default  
+</details>
 
 
 
