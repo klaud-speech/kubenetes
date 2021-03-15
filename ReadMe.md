@@ -101,9 +101,14 @@ kube-system   storage-provisioner                 1/1     Running   0          8
 
 
 
-
-
-
+```
+minikube dashboard
+```
+<details><summary> 결과화면 </summary>
+http://211.236.230.232:38012/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#1/pod?namespace=kube-system
+    
+    
+</summary>
 
 ## Uninstall
 ```
