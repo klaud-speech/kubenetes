@@ -125,6 +125,24 @@ minikube service hello-minikube
  ==> CloudIT에서는  외부 IP 즉 http://211.236.230.232:30768            <br>
 </details>
 
+#### Application 실행하기
+```
+kubectl run test --image=adamdoha/test --port=8080 --generator=run/v1
+kubectl get pods
+kubectl describe pods
+```
+
+### Deployment 만들기
+```
+kubectl create deployment test-node --image=adamdoha/test
+kubectl get deployments
+kubectl describe pods
+kubectl expose deployment test-node --type=LoadBalancer --port=8080
+kubectl get services
+minikube service test-node
+curl http://211.236.230.232:30768/
+```
+
 #### 각종 조회
 ```
 kubectl cluster-info
