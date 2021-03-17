@@ -1,18 +1,32 @@
 
+## 쿠버네티스 클러스터 설치 및 간단한 애플리케이션 실행하기(Minikube편)
 source from  https://blog.naver.com/adamdoha/222245086772
 
+MINIKUBE 대신에,  구글의 GKE를 사용하여도 된다.   EKS(Amazon Elastic Kubernetes)도 있음.
+minikube는 **단일노드 클러스터**를 설치하는 **도구**이다. 로컬에서만 가능. 클라우드 미지원?
+
+### 용어 정립
+* 클러스터(Cluster)
+* 노드(Node) :: 워커(worker node), ...
+* 파드(Pod) :: 하나 이상의 밀접하게 연관된 **컨테이너의 그룹**.  개별적인 IP, HostName, 프로세스를 가짐( 다른 파트에서 실행 중인 컨테이너는 같은 워커 노드에서 실행 중이라 할지라도, 다른 머신에서 실행 중인 것으로 나타남.( 다른 IP )
+* 컨테이너 :: 이미지를 실행한 객제?,  
+
+<img src=" " width="700" height="370"
 
 
-## Install
+## Installation
 ```
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
 rpm -ivh minikube-latest.x86_64.rpm
 ```
+x86-64를 설치하여도 다른 Architecture가 설치되지만, Running은 된다.
 
 ```
 PATH=$PATH:/usr/bin
 echo $PATH
 ```
+실행 파일에 대한 경로를 PATH에 추가한다. 
+
 #### docker 설치
 ```
 yum install docker
@@ -20,7 +34,7 @@ systemctl enable docker
 systemctl start docker
 ```
 
-#### kubectl 설치
+#### kubectl 설치 <- 쿠버네티스 클라이언트 설치 ( Kubectl CLI 클라이언트)
 ```
 cat <<EOF > /etc/yum.repos.d/kubernetes.repo
 [kubernetes]
@@ -32,15 +46,20 @@ repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 ```
+다운로드 받을 Repository를 설정한다.
+
 ```
 yum install -y kubectl
 ```
 
-#### minikube 시작
+#### minikube 시작 ( minikube로 쿠버네티스 클러스터 시작하기 )
 ```
 minikube start
 ```
 X Exiting due to DRV_AS_ROOT: The "docker" driver should not be used with root privileges.
+
+오류가 발생하면, 맨 앞에 X 표시 및 원인에 대한 메시지를 출력한다.
+
 
 ```
 minikube start --driver=none
@@ -83,9 +102,29 @@ minikube start --driver=none
 * Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default  <br>
 </details>
 
+#### 클러스터 작동 여부 확인 및 kubuctl 로 사용해 보기
+```
+kubectl  cluster-info
+```
+<details><summary> 결과화면 </summary>
+Kubernetes control plane is running at https://10.0.0.2:8443
+KubeDNS is running at https://10.0.0.2:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+</details>
+
+#### 클러스터 노드를 조회해, 클러스터 동작 상태 확인하기
+```
+kubectl get nodes
+```
+<details><summary> 결과화면 </summary>
+NAME        STATUS   ROLES                  AGE   VERSION
+localhost   Ready    control-plane,master   13h   v1.20.2
+</details>
 
 
-shiny new cluster
+
+
+
+#### shiny new cluster
 ```
 kubectl get po -A
 ```
@@ -146,7 +185,7 @@ curl http://211.236.230.232:30768/
 
 #### 각종 조회
 ```
-kubectl cluster-info
+kubectl cluster-info                   # 클러스터가 정상동작하고 있는지
 kubectl get nodes
 kubectl get pods
 kubectl get svc
