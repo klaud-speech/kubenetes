@@ -11,7 +11,7 @@ minikube는 **단일노드 클러스터**를 설치하는 **도구**이다. 로�
 * 파드(Pod) :: 하나 이상의 밀접하게 연관된 **컨테이너의 그룹**.  개별적인 IP, HostName, 프로세스를 가짐( 다른 파트에서 실행 중인 컨테이너는 같은 워커 노드에서 실행 중이라 할지라도, 다른 머신에서 실행 중인 것으로 나타남.( 다른 IP )
 * 컨테이너 :: 이미지를 실행한 객제?,  
 
-<img src=" " width="700" height="370"
+<img src="KubernetesInAction.png" width="700" height="370">
 
 
 ## Installation
