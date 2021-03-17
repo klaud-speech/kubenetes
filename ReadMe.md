@@ -10,6 +10,10 @@ minikube는 **단일노드 클러스터**를 설치하는 **도구**이다. 로�
 * 노드(Node) :: 워커(worker node), ...
 * 파드(Pod) :: 하나 이상의 밀접하게 연관된 **컨테이너의 그룹**.  개별적인 IP, HostName, 프로세스를 가짐( 다른 파트에서 실행 중인 컨테이너는 같은 워커 노드에서 실행 중이라 할지라도, 다른 머신에서 실행 중인 것으로 나타남.( 다른 IP )
 * 컨테이너 :: 이미지를 실행한 객제?,  독립적인 쿠버네티스의 오브젝터(Object)가 아님.
+* 디플로이먼트(deployment)
+** create
+** expose
+
 
 <img src="KubernetesInAction.png" width="700" height="370">
 
@@ -179,6 +183,8 @@ kubectl run test --image=adamdoha/test --port=8080 --generator=run/v1
 kubectl get pods
 kubectl describe pods
 ```
+image가 로컬에 없으면, 또는 docker허브로 지정되어 있으면  docker허브로부터 다운받아서, pod 및 컨테이너를 형성한다.
+
 
 ### Deployment 만들기
 ```
@@ -190,6 +196,8 @@ kubectl get services
 minikube service test-node
 curl http://211.236.230.232:30768/
 ```
+test-node라는  deployment가 형성된다. 물론 새로운 pod도 형성된다.
+
 
 #### 각종 조회
 ```
