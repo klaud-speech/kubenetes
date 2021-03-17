@@ -125,10 +125,10 @@ localhost   Ready    control-plane,master   13h   v1.20.2
 kubectl get pods
 ```
 <details><summary> 결과화면 </summary>
-| NAME    |                     READY |  STATUS  |  RESTARTS   |AGE |  
-| ------  |  ----------               |  -------  | ---------   | --- |  
-|test      |                      1/1  |  Running  |  0          | 13h |  
-|test-node-5c769c86cc-w9jt5 |  1/1   |  Running |   0   |        13h    |  
+| NAME    |                     READY |  STATUS  |  RESTARTS   |AGE |   <br>
+| ------  |  ----------               |  -------  | ---------   | --- |   <br>
+|test      |                      1/1  |  Running  |  0          | 13h |   <br>
+|test-node-5c769c86cc-w9jt5 |  1/1   |  Running |   0   |        13h    |   <br>
 </details>
 
 
